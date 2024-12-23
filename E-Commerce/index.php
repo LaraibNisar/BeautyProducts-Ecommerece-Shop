@@ -1,7 +1,10 @@
 <?php
+ob_start();
 include('./includes/connect.php');
 include('./functions/common_functions.php');
 session_start();
+$htmlContent = ob_get_clean(); // Get the buffered content
+file_put_contents('index.html', $htmlContent); // Save to an HTML file
 ?>
 <!DOCTYPE html>
 <html lang="en">
